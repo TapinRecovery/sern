@@ -88,7 +88,6 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := vendor/spes-perf_defconfig
 TARGET_KERNEL_HEADERS := kernel/xiaomi/sm6225
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6225
-BOARD_RAMDISK_USE_LZ4 := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
