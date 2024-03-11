@@ -86,7 +86,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		# Ensure that /sdcard is bind-unmounted before f2fs data repair or format
  		export OF_UNBIND_SDCARD_F2FS=1
 
-		# Other OrangeFox configs
+		# Partitions configs
 		export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"; # Sun 21 Mar 04:26:40 GMT 2021
 		export OF_QUICK_BACKUP_LIST="/boot;/data;"
 		export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
