@@ -31,14 +31,14 @@ setdevicemodel() {
 
 load_spes()
 {
-    echo "I:Variant-Script: Loaded rubypro variant" | tee -a $LOG_PATH
+    echo "I:Variant-Script: Loaded Spes variant" | tee -a $LOG_PATH
     setdevicename "spes"
     setdevicemodel "Redmi Note 11"
 }
 
 load_spesn()
 {
-    echo "I:Variant-Script: Loaded ruby variant" | tee -a $LOG_PATH
+    echo "I:Variant-Script: Loaded Spesn variant" | tee -a $LOG_PATH
     setdevicename "spesn"
     setdevicemodel "Redmi Note 11 NFC"
 }
