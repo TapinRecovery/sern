@@ -47,13 +47,13 @@ variant=$(resetprop ro.boot.hwname)
 
 case $variant in
     "spes")
-        load_spes
-        ;;
-    "spesn")
         load_spesn
         ;;
-    *)
+    "spesn")
         load_spes
+        ;;
+    *)
+        load_spesn
         ;;
 esac
 
