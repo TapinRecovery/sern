@@ -127,18 +127,33 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Use LZ4 Ramdisk compression instead of GZIP
 BOARD_RAMDISK_USE_LZ4 := true
 
-# Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
-# Treble
-BOARD_VNDK_VERSION := current
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+# Display
+TARGET_SCREEN_DENSITY := 440
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 2047
+TW_DEFAULT_BRIGHTNESS := 500
+
+# StatusBar
+TW_STATUS_ICONS_ALIGN := center
+TW_CUSTOM_CPU_POS := "300"
+TW_CUSTOM_CLOCK_POS := "70"
+TW_CUSTOM_BATTERY_POS := "790"
 
 # UEFI
 TARGET_USES_UEFI := true
+
+# Treble
+BOARD_VNDK_VERSION := current
+
+# Vibrator Libraries
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true  
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -148,3 +163,52 @@ BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
+
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 1200
+
+# Crypto
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+
+# Security patch level
+PLATFORM_VERSION := 14
+PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
+PLATFORM_SECURITY_PATCH := 2099-12-31
+BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+
+# Tool
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP := true
+
+# TWRP specific build flags
+TW_FRAMERATE := 60
+TW_THEME := portrait_hdpi
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_FUSE_EXFAT := true
+TW_INCLUDE_FUSE_NTFS  := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_EXTRA_LANGUAGES := true
+TW_NO_SCREEN_BLANK := true
+TW_SCREEN_BLANK_ON_BOOT := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+TW_EXCLUDE_APEX := true
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+
+# USB Configuration
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+
+# Modul
+TARGET_RECOVERY_DEVICE_MODULES += libion vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti vendor.qti.hardware.vibrator.service vendor.qti.hardware.vibrator.impl libqtivibratoreffect
+
+# This device support fastbootd , do *NOT* remove!
+TW_INCLUDE_FASTBOOTD := true
+
+# Log
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
