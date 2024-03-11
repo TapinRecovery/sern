@@ -46,10 +46,10 @@ load_spesn()
 variant=$(resetprop ro.boot.hwname)
 
 case $variant in
-    "spes")
+    "spesn")
         load_spesn
         ;;
-    "spesn")
+    "spes")
         load_spes
         ;;
     *)
