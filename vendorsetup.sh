@@ -53,6 +53,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 		export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
      		export OF_NO_MIUI_PATCH_WARNING=1
+       		export OF_PATCH_AVB20=1
 
 		export OF_DONT_PATCH_ON_FRESH_INSTALLATION=1
 		export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
@@ -99,6 +100,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		# Other OrangeFox configs
 		export OF_ALLOW_DISABLE_NAVBAR=0
 		export FOX_DELETE_AROMAFM=1
+  		export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
   		export FOX_VIRTUAL_AB_DEVICE=1
     		export OF_ADVANCED_SECURITY=1
   
