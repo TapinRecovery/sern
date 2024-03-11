@@ -59,6 +59,14 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/qcom-caf/bootctrl
+
 # f2fs utilities
 PRODUCT_PACKAGES += \
     sg_write_buffer \
