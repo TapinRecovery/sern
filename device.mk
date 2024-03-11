@@ -77,11 +77,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.sh \
     init.recovery.qcom.rc
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/qcom-caf/bootctrl
-
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
