@@ -109,7 +109,6 @@ BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext odm product ven
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
 # Partitions Target
-BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
