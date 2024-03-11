@@ -205,9 +205,6 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 # USB Configuration
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 
-# Modul
-TARGET_RECOVERY_DEVICE_MODULES += libion vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti vendor.qti.hardware.vibrator.service vendor.qti.hardware.vibrator.impl libqtivibratoreffect
-
 # This device support fastbootd , do *NOT* remove!
 TW_INCLUDE_FASTBOOTD := true
 
