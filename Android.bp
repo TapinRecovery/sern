@@ -1,5 +1,8 @@
-soong_namespace {
-    imports: [
-        "hardware/qcom-caf/bootctrl",
-    ],
-}
+[
+  {
+    "remote": "github",
+    "repository": "mi-sdm680/android_kernel_xiaomi_sm6225",
+    "target_path": "kernel/xiaomi/spes",
+    "revision": "spes-r-oss"
+  }
+]
