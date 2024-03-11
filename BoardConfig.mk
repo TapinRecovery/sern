@@ -54,6 +54,9 @@ TARGET_NO_BOOTLOADER := true
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := bengal
 
+# Build No Vendor
+BUILD_WITHOUT_VENDOR := true
+
 # Kernel
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_BOOT_HEADER_VERSION := 3
@@ -112,7 +115,6 @@ $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-l
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := vendor
-BUILD_WITHOUT_VENDOR := true
 
 # Userdata Propertirs
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
